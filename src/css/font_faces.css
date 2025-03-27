@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'AveriaSerifLibre-Bold';
+    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'AveriaSerifLibre-Regular';
+    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'FiraSans-Regular';
+    src: url(../fonts/FiraSans/FiraSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'FiraSans-Italic';
+    src: url(../fonts/FiraSans/FiraSans-Italic.ttf);
+}

@@ -1,0 +1,98 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #111114;
+
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 60px;
+  font-family: 'AveriaSerifLibre-Bold';
+}
+
+h2 {
+  height: auto;
+  width: 600px;
+  text-align: start;
+  font-family: 'Firasans-Italic';
+  margin-top: 50px;
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-image: url('../img/atardecer.jpg');
+  background-size: 1600px 750px;
+  height: 750px;
+  min-width: 1000px;
+}
+
+.hero-text {
+  padding: 60px 60px 60px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.hero-text span {
+  font-size: 20px;
+  color: #fff;
+  opacity: 70%;
+  font-family: 'AveriaSerifLibre-Regular';
+}
+
+/* Estilos para stack tecnológico */
+
+.container-title {
+  font-family: 'AveriaSerifLibre-Regular';
+  align-self: start;
+}
+
+.stack-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #010010;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-title {
+  font-family: 'AveriaSerifLibre-Bold';
+  font-style: italic;
+  font-size: 40px;
+  align-self: center;
+}
+
+.stack-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  height: auto;
+}
