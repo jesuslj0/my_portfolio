@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'AveriaSerifLibre-Bold';
-    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Bold.ttf);
+    font-family: 'AveriaSerifLibre-Regular';
+    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'AveriaSerifLibre-Regular';
-    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Regular.ttf);
+    font-family: 'AveriaSerifLibre-Bold';
+    src: url(../fonts/AveriaSerifLibre/AveriaSerifLibre-Bold.ttf);
 }
 
 @font-face {
@@ -16,4 +16,9 @@
 @font-face {
     font-family: 'FiraSans-Italic';
     src: url(../fonts/FiraSans/FiraSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: 'FiraSans-Thin';
+    src: url(../fonts/FiraSans/FiraSans-Thin.ttf);
 }

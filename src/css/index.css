@@ -68,8 +68,17 @@ h2 {
 /* Estilos para stack tecnológico */
 
 .container-title {
-  font-family: 'AveriaSerifLibre-Regular';
-  align-self: start;
+  font-family: 'AveriaSerifLibre-Bold';
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(68,58,180,1) 13%, rgba(172,29,253,1) 53%, rgba(252,69,103,1) 100%);
+  margin-bottom: 30px;
 }
 
 .stack-container {
@@ -94,5 +103,65 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   width: 60%;
+  height: fit-content;
+  margin-bottom: 50px;
+}
+
+.frontend {
+  height: 300px;
+}
+
+.stack-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  width: fit-content;
+  gap: 10px 20px;
   height: auto;
+}
+
+.ide {
+  grid-template-columns: auto auto;
+  gap: 50px;
+}
+
+.stack-item {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+  font-family: 'FiraSans-Regular';
+  font-size: 20px;
+}
+
+.stack-item:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  transitiOn: transform 0.4s ease-in-out;
+}
+
+.stack-item:not(:hover) {
+  transition: transform 0.6s ease-in-out;
+} 
+
+.icon {
+  width: 48px;
+  height: auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stack-icon {
+  width: 40px;
+  filter: invert(0.8);
+  margin-right: 10px;
+  animation: rotate 4s linear infinite;
 }
