@@ -1,5 +1,12 @@
 import '../css/index.css'
 import '../css/font_faces.css'
+import Spline from '@splinetool/react-spline';
+
+export default function SplineSetUp() {
+  return (
+    <Spline scene="https://prod.spline.design/6w5DjjSbKqoI53zj/scene.splinecode" />
+  );
+}
 
  export const Dashboard = () => {
 
@@ -12,7 +19,7 @@ import '../css/font_faces.css'
                     <h2>Hello, I'm a junior web developer with creativity and a desire to create clean code projects that generate the best user experience.</h2>   
                 </div>
                 <div className="hero-imagen">
-
+                    <SplineSetUp/>
                 </div>
             </div>
             <div className="stack-container">
@@ -29,7 +36,7 @@ import '../css/font_faces.css'
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript" className='icon'/> Javascript</div>
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript" className='icon'/> Typescript</div>
-                        <div className='stack-item'>
+                        <div className='stack-item'>                                                                              
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react" className='icon'/> React</div>
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg" alt="astro" className='icon'/> Astro</div>
