@@ -1,25 +1,29 @@
 import '../css/index.css'
 import '../css/font_faces.css'
-import Spline from '@splinetool/react-spline';
-
-export default function SplineSetUp() {
-  return (
-    <Spline scene="https://prod.spline.design/6w5DjjSbKqoI53zj/scene.splinecode" />
-  );
-}
+import SplineSetUp from './SplineSetUp';
 
  export const Dashboard = () => {
+
+    const launchRocket = () => {
+        const rocket = document.getElementById('rocket');
+        if (rocket) {
+            rocket.classList.add('launched');
+            setTimeout(() => {
+                rocket.classList.remove('launched');
+            }, 2000);
+        }
+    }
 
     return (
         <div className="dashboard">
             <div className="hero-container">
                 <div className='hero-text'>
-                    <h1>Web Developer</h1>
-                    <span>&#9675; Software Lover &#9675;</span>
-                    <h2>Hello, I'm a junior web developer with creativity and a desire to create clean code projects that generate the best user experience.</h2>   
+                    <h1 className='animate__animated animate__fadeInDown'>Web Developer</h1>
+                    <span className='animate__animated animate__fadeInLeft' id="hero-subtitle">&#9675; Software Lover &#9675;</span>
+                    <h2 className='animate__animated animate__fadeInUp'>Hello, I'm a junior web developer with creativity and a desire to create clean code projects that generate the best user experience.</h2>   
                 </div>
                 <div className="hero-imagen">
-                    <SplineSetUp/>
+                    <SplineSetUp />
                 </div>
             </div>
             <div className="stack-container">
@@ -108,6 +112,29 @@ export default function SplineSetUp() {
                         <div className='stack-item'>
                             <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt='IntelliJ IDEA'/> IntelliJ IDEA
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className="projects-container">
+                <h3 className="container-title"><img onClick={launchRocket} className="projects-icon" id="rocket" src="icons/rocket.svg" alt="Rocket"/> Selected Projects</h3>
+                <div className='separator'></div>
+                <div className='projects-list'>
+                    <div className='project-item'>
+                        <h3 className='project-title techchain'>TechChain</h3>
+                        <img className='project-image' src="img/projects/techchain_login.png" alt="TechChain Snapshot"/>
+                        <p className='project-description'>Social network focused on technology and innovation. Some of its functionalities such as real-time chat and interactive posts.</p>
+                        <ul className='project-technologies'>
+                            <li>Django Templates</li>
+                            <li>Javascript</li>
+                            <li>CSS</li>
+                            <li>Bootstrap</li>
+                            <li>Python - Django</li>
+                            <li>MySQL</li>
+                            <li>Redis</li>
+                        </ul>
+                    </div>
+                    <div className='project-item'>
+                        <span>Coming soon...</span>
                     </div>
                 </div>
             </div>

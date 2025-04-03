@@ -22,3 +22,8 @@
     font-family: 'FiraSans-Thin';
     src: url(../fonts/FiraSans/FiraSans-Thin.ttf);
 }
+
+@font-face {
+    font-family: 'Goldman-Bold';
+    src: url(../fonts/Goldman/Goldman-Bold.woff);
+}

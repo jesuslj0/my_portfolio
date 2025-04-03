@@ -58,10 +58,9 @@ h2 {
   align-items: start;
 }
 
-.hero-text span {
+#hero-subtitle {
   font-size: 20px;
-  color: #fff;
-  opacity: 70%;
+  color: #ffffffb0;
   font-family: 'AveriaSerifLibre-Regular';
 }
 
@@ -164,4 +163,96 @@ h2 {
   filter: invert(0.8);
   margin-right: 10px;
   animation: rotate 4s linear infinite;
+}
+
+
+/* Estilos para proyectos */
+.projects-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #010010;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 30px;
+  width: 100%;
+  height: auto;
+}
+
+.project-title {
+  font-family: 'AveriaSerifLibre-Bold';
+  font-style: italic;
+  font-size: 40px;
+  align-self: center;
+}
+
+.project-description {
+  font-family: 'FiraSans-Regular';
+  font-size: 20px;
+  width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-technologies {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: 'FiraSans-Regular';
+  font-size: 16px;
+  opacity: 70%;
+}
+
+.project-image {
+  width: 600px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.techchain {
+  font-family: "Goldman-Bold";
+  font-style: normal;
+}
+
+.projects-icon {
+  width: 40px;
+  filter: brightness(0) invert(0.8);
+  margin: 0px;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.projects-icon:hover {
+  cursor: pointer;
+}
+
+.launched {
+  animation: launch 2s ease-in-out;
+}
+
+@keyframes launch {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-50%) translateY(-80px) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-130px) rotate(-45deg);
+    opacity: 0;
+  }
 }
