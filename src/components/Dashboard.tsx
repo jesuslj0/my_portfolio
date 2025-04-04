@@ -1,8 +1,19 @@
 import '../css/index.css'
 import '../css/font_faces.css'
 import SplineSetUp from './SplineSetUp';
+import { useEffect } from 'react';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
  export const Dashboard = () => {
+
+    useEffect(() => {
+        AOS.init({
+          duration: 800, // Duración de la animación en milisegundos
+          easing: "ease-in-out", // Tipo de animación
+          once: false, // Ejecutar la animación tantas veces como se vea el elemento
+        });
+      }, []);
 
     const launchRocket = () => {
         const rocket = document.getElementById('rocket');
@@ -13,6 +24,29 @@ import SplineSetUp from './SplineSetUp';
             }, 2000);
         }
     }
+
+    const makeIconVisible = (event: React.MouseEvent<HTMLHeadingElement>) => {
+        const stackTitle = event.currentTarget; // <h4>
+        const icon = stackTitle.querySelector('.stack-group-icon') as HTMLElement;
+        if (icon) {
+            icon.classList.add('visible');
+        }
+    };
+    
+    const makeIconInvisible = (event: React.MouseEvent<HTMLHeadingElement>) => {
+        const stackTitle = event.currentTarget; // <h4>
+        const icon = stackTitle.querySelector('.stack-group-icon') as HTMLElement;
+        if (icon) {
+            icon.classList.remove('visible');
+        }
+    };
+
+    const scrollToNextSection = () => {
+        const nextSection = document.querySelector('.stack-container');
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="dashboard">
@@ -26,12 +60,19 @@ import SplineSetUp from './SplineSetUp';
                     <SplineSetUp />
                 </div>
             </div>
+            <div className='scroll-down' onClick={scrollToNextSection}>
+                <img className='scroll-down-icon' src='icons/scroll_down.svg' alt='scroll-down'></img>
+            </div>
             <div className="stack-container">
                 <h3 className="container-title"><img className="stack-icon" src="icons/settings_wheel.svg" alt="stack-tools"/> My Tech Stack</h3>
                 <div className='separator'></div>
                 <div className="stack-group frontend">
-                    <h4 className='stack-title'>Frontend</h4>
-                    <div className='stack-list'>
+                    <h4 className='stack-title' data-aos="fade-right" 
+                        onMouseEnter={makeIconVisible} onMouseLeave={makeIconInvisible} >
+                        Frontend
+                        <img src='icons/html_icon.svg' className='stack-group-icon'></img>
+                    </h4>
+                    <div className='stack-list' data-aos="fade-left">
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html5" className='icon'/> HTML</div>
                         <div className='stack-item'>
@@ -52,9 +93,13 @@ import SplineSetUp from './SplineSetUp';
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="sass" className='icon'/> SCSS</div>
                     </div>
                 </div>
-                <div className="stack-group">
-                    <h4 className='stack-title'>Backend</h4>
-                    <div className='stack-list'>
+                <div className="stack-group backend">
+                    <h4 className='stack-title' data-aos="fade-right"
+                        onMouseOver={makeIconVisible} onMouseOut={makeIconInvisible} >
+                        Backend
+                        <img src='icons/backend_icon.svg' className='stack-group-icon'></img>
+                    </h4>
+                    <div className='stack-list' data-aos="fade-left">
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python" className='icon'/> Python</div>
                         <div className='stack-item'>
@@ -62,16 +107,20 @@ import SplineSetUp from './SplineSetUp';
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="nodejs" className='icon'/> Node.js</div>
                         <div className='stack-item'>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" className='icon'/> Express</div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" className='icon' style={{filter: 'invert(1)'}}/> Express</div>
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java" className='icon'/> Java</div>
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="spring" className='icon'/> Spring</div>
                     </div>
                 </div>
-                <div className="stack-group">
-                    <h4 className='stack-title'>Database</h4>
-                    <div className='stack-list'>
+                <div className="stack-group database">
+                    <h4 className='stack-title' data-aos="fade-right"
+                        onMouseOver={makeIconVisible} onMouseOut={makeIconInvisible}>
+                        Database
+                        <img src='icons/database_icon.svg' className='stack-group-icon'></img>
+                    </h4>
+                    <div className='stack-list' data-aos="fade-left">
                         <div className='stack-item'>
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="mysql" className='icon'/> MySQL</div>
                         <div className='stack-item'>
@@ -80,14 +129,18 @@ import SplineSetUp from './SplineSetUp';
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongodb" className='icon'/> MongoDB</div>
                     </div>
                 </div>
-                <div className="stack-group">
-                    <h4 className='stack-title'>Tools</h4>
-                    <div className='stack-list'>
+                <div className="stack-group tools">
+                    <h4 className='stack-title' data-aos="fade-right"
+                        onMouseOver={makeIconVisible} onMouseOut={makeIconInvisible}>
+                        Tools
+                        <img src='icons/tool_icon.svg' className='stack-group-icon'></img>
+                    </h4>
+                    <div className='stack-list' data-aos="fade-left">
                         <div className='stack-item'>
                             <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt='Git'/> Git
                         </div>
                         <div className='stack-item'>
-                            <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt='GitHub'/> GitHub
+                            <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt='GitHub' style={{filter: 'invert(1)'}}/> GitHub
                         </div>
                         <div className='stack-item'>
                             <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt='Figma'/> Figma
@@ -103,9 +156,13 @@ import SplineSetUp from './SplineSetUp';
                         </div>
                     </div>
                 </div>
-                <div className='stack-group'>
-                    <h4	className='stack-title'>IDE</h4>
-                    <div className='stack-list ide'>
+                <div className='stack-group ide'>
+                    <h4	className='stack-title' data-aos="fade-right"
+                        onMouseOver={makeIconVisible} onMouseOut={makeIconInvisible}>
+                        IDE
+                        <img src='icons/coding_icon.svg' className='stack-group-icon'></img>
+                    </h4>
+                    <div className='stack-list ide' data-aos="fade-left">
                         <div className='stack-item'>
                             <img className="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt='VSCode'/> VSCode
                         </div>
